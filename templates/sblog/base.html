@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{%comment%}
+		<link rel="stylesheet" href="D:/Python27/blog/static/css/reset.css">
+		<link rel="stylesheet" href="D:/Python27/blog/static/css/style.css">
+		<link rel="stylesheet" href="D:/Python27/blog/static/css/code.css">
+	{%endcomment%}
+	<meta charset="UTF-8"/>
+	<title>
+		{% block title %}{% endblock %}
+	</title>
+	<link rel="stylesheet" href="D:/Python27/blog/static/css/bootstrap.css">
+	<script src="D:/Python27/blog/static/js/modernizr.js"></script>
+	<script src="D:/Python27/blog/static/js/jquery.js"></script>
+	{% block extra_head %}
+	{% endblock %}
+</head>
+<body>
+	{% block body %}
+		{%block header%}
+			{%block menu%}
+			{%endblock%}
+		{%endblock%}
+		<div class="container">
+		{% block content %}
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span9">
+						{% block article %}
+							{%block article_title %}
+							{%endblock%}
+							{% block article_content%}{%endblock%}
+						{%endblock%}
+						{%block article_menu%}{%endblock%}
+						{%block comments%}{%endblock%}
+					</div>
+					<div class="span3">
+						{% block aside %}
+							{%block tags%}{%endblock%}
+						{%endblock%}
+				 	</div>
+				</div>
+			</div>
+		{%endblock%}
+		{% block footer%}
+			<p>Thanks for visiting my site!</p>
+		{%endblock%}
+		</div>
+	{%endblock%}
+	<script src="D:/Python27/blog/static/js/bootstrap.min.js"></script>
+</body>
+</html>	
